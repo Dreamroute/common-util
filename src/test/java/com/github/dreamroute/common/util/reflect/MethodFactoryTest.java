@@ -1,9 +1,9 @@
-package com.github.dreamroute.reflect;
+package com.github.dreamroute.common.util.reflect;
+
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
 import java.util.Map;
-
-import org.junit.Test;
 
 public class MethodFactoryTest {
 

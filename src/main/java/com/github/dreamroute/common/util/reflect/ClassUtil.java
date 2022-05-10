@@ -1,4 +1,4 @@
-package com.github.dreamroute.reflect;
+package com.github.dreamroute.common.util.reflect;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ReflectPermission;
