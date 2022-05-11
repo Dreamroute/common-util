@@ -2,7 +2,9 @@ package com.github.dreamroute.common.util;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -50,8 +52,20 @@ public class CollectionUtil {
         return nonNull(source).stream();
     }
 
-    public static <T> T[] nonNull(T[] source) {
+    public static <T> List<T> newArrayList() {
+        return new ArrayList<>();
+    }
 
+    public static <T> List<T> newArrayList(int initialCapacity) {
+        return new ArrayList<>(initialCapacity);
+    }
+
+    public static <T> List<T> newLinkedList() {
+        return new LinkedList<>();
+    }
+
+    public static <K, V> Map<K, V> newHashMap() {
+        return new HashMap<>();
     }
 
 }

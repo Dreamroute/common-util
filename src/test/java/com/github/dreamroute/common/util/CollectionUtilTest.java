@@ -6,10 +6,13 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Set;
 
+import static com.github.dreamroute.common.util.CollectionUtil.newArrayList;
 import static com.github.dreamroute.common.util.CollectionUtil.nonNull;
+import static com.github.dreamroute.common.util.CollectionUtil.nonNullStream;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toList;
 
 /**
- *
  * @author w.dehi.2022-05-10
  */
 class CollectionUtilTest {
@@ -23,6 +26,17 @@ class CollectionUtilTest {
         Set<Integer> set = null;
         Set<Integer> setResult = nonNull(set);
         Assertions.assertNotNull(setResult);
+    }
+
+    @Test
+    void collectTest() {
+        List<String> names = newArrayList(5);
+        nonNull(names).forEach(e -> {
+            System.err.println(e);
+        });
+        List<String> result = nonNullStream(names).map(identity()).collect(toList());
+        System.err.println(result);
+
     }
 
 }
