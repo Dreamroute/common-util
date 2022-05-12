@@ -53,14 +53,6 @@ public class CollectionUtil {
         return nonNull(source).stream();
     }
 
-    public static <T> List<T> newArrayList() {
-        return new ArrayList<>();
-    }
-
-    public static <T> List<T> newArrayListWithCapacity(int initialCapacity) {
-        return new ArrayList<>(initialCapacity);
-    }
-
     @SafeVarargs
     public static <T> List<T> newArrayList(T... init) {
         return new ArrayList<>(Arrays.asList(init));
@@ -68,14 +60,6 @@ public class CollectionUtil {
 
     public static <T> List<T> newArrayList(Collection<? extends T> c) {
         return new ArrayList<>(c);
-    }
-
-    public static <T> List<T> newLinkedList() {
-        return new LinkedList<>();
-    }
-
-    public static <K, V> Map<K, V> newHashMap() {
-        return new HashMap<>();
     }
 
 }
