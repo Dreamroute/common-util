@@ -1,6 +1,7 @@
 package com.github.dreamroute.common.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -56,8 +57,17 @@ public class CollectionUtil {
         return new ArrayList<>();
     }
 
-    public static <T> List<T> newArrayList(int initialCapacity) {
+    public static <T> List<T> newArrayListWithCapacity(int initialCapacity) {
         return new ArrayList<>(initialCapacity);
+    }
+
+    @SafeVarargs
+    public static <T> List<T> newArrayList(T... init) {
+        return new ArrayList<>(Arrays.asList(init));
+    }
+
+    public static <T> List<T> newArrayList(Collection<? extends T> c) {
+        return new ArrayList<>(c);
     }
 
     public static <T> List<T> newLinkedList() {

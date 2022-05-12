@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Set;
 
+import static com.github.dreamroute.common.util.CollectionUtil.*;
 import static com.github.dreamroute.common.util.CollectionUtil.newArrayList;
+import static com.github.dreamroute.common.util.CollectionUtil.newArrayListWithCapacity;
 import static com.github.dreamroute.common.util.CollectionUtil.nonNull;
 import static com.github.dreamroute.common.util.CollectionUtil.nonNullStream;
 import static java.util.function.Function.identity;
@@ -30,12 +32,16 @@ class CollectionUtilTest {
 
     @Test
     void collectTest() {
-        List<String> names = newArrayList(5);
+        List<String> names = newArrayListWithCapacity(5);
         nonNull(names).forEach(e -> {
             System.err.println(e);
         });
         List<String> result = nonNullStream(names).map(identity()).collect(toList());
         System.err.println(result);
+
+        List<String> mmdd = newArrayListWithCapacity(10);
+        List<String> md = newArrayList();
+
 
     }
 
