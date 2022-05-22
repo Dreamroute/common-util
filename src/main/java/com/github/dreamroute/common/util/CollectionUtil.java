@@ -3,9 +3,7 @@ package com.github.dreamroute.common.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -38,6 +36,14 @@ public class CollectionUtil {
         return !isEmpty(source);
     }
 
+    public static <T> boolean isEmpty(T[] source) {
+        return source == null || source.length == 0 || Arrays.stream(source).allMatch(Objects::isNull);
+    }
+
+    public static <T> boolean isNotEmpty(T[] source) {
+        return !isEmpty(source);
+    }
+
     public static <T> List<T> nonNull(List<T> source) {
         return ofNullable(source).orElseGet(ArrayList::new);
     }
@@ -61,10 +67,6 @@ public class CollectionUtil {
 
     public static <T> List<T> newArrayList(Collection<? extends T> c) {
         return new ArrayList<>(c);
-    }
-
-    public static <T> boolean isEmpty(T[] source) {
-        return source == null || source.length == 0 || Arrays.stream(source).allMatch(Objects::isNull);
     }
 
 }
