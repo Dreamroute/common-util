@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -60,6 +61,10 @@ public class CollectionUtil {
 
     public static <T> List<T> newArrayList(Collection<? extends T> c) {
         return new ArrayList<>(c);
+    }
+
+    public static <T> boolean isEmpty(T[] source) {
+        return source == null || source.length == 0 || Arrays.stream(source).allMatch(Objects::isNull);
     }
 
 }
