@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.dreamroute</groupId>
   <artifactId>common-util</artifactId>
-  <version>1.2.3</version>
+  <version>1.2.4</version>
   <name>common-util</name>
   <description>一些常用工具类</description>
   <url>https://github.com/Dreamroute/common-util</url>

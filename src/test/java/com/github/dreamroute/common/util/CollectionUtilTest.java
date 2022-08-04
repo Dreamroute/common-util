@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import static com.github.dreamroute.common.util.CollectionUtil.nonNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author w.dehi.2022-05-10
@@ -26,8 +27,12 @@ class CollectionUtilTest {
 
     @Test
     void collectTest() {
-
-
+        String[] names = null;
+        assertTrue(CollectionUtil.isEmpty(names));
+        names = new String[0];
+        assertTrue(CollectionUtil.isEmpty(names));
+        names = new String[] {null, null};
+        assertTrue(CollectionUtil.isEmpty(names));
     }
 
 }

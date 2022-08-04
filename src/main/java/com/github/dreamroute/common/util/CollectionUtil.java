@@ -3,11 +3,10 @@ package com.github.dreamroute.common.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -34,6 +33,14 @@ public class CollectionUtil {
     }
 
     public static <K, V> boolean isNotEmpty(Map<K, V> source) {
+        return !isEmpty(source);
+    }
+
+    public static <T> boolean isEmpty(T[] source) {
+        return source == null || source.length == 0 || Arrays.stream(source).allMatch(Objects::isNull);
+    }
+
+    public static <T> boolean isNotEmpty(T[] source) {
         return !isEmpty(source);
     }
 
