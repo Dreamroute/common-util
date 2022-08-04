@@ -69,4 +69,8 @@ public class CollectionUtil {
         return new ArrayList<>(c);
     }
 
+    public static <T> List<T> newArrayListWithCapacity(int capacity) {
+        return new ArrayList<>(capacity);
+    }
+
 }
