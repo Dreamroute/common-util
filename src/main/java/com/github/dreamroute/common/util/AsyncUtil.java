@@ -28,4 +28,12 @@ public class AsyncUtil {
     public static CompletableFuture<Void> run(Runnable runnable, Executor executor) {
         return CompletableFuture.runAsync(runnable, executor);
     }
+
+    public static CompletableFuture<Void> allOf(CompletableFuture<?>... cs) {
+        return CompletableFuture.allOf(cs);
+    }
+
+    public static CompletableFuture<Object> anyOf(CompletableFuture<?>... cs) {
+        return CompletableFuture.anyOf(cs);
+    }
 }
